@@ -61,6 +61,7 @@ for parte in partes:
             if idx < indice_global + caps:
                 if columnas[j].button(f"{(i+j)+1}", key=f"cap_{idx}"):
                     st.session_state.leidos[idx] = not st.session_state.leidos[idx]
+                    st.rerun()
                 
                 if st.session_state.leidos[idx]:
                     columnas[j].markdown("🟩")
