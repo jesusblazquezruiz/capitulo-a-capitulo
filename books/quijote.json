@@ -1,0 +1,7 @@
+{
+  "titulo": "Don Quijote de la Mancha",
+  "partes": [
+    { "nombre": "Parte I", "capitulos": 52 },
+    { "nombre": "Parte II", "capitulos": 74 }
+  ]
+}
