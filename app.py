@@ -163,18 +163,15 @@ for parte in partes:
             if idx < indice_global + caps:
                 if columnas[j].button(f"{(i+j)+1}", key=f"cap_{idx}"):
 
-    # 1. Cambiar estado local
-    st.session_state.leidos[idx] = not st.session_state.leidos[idx]
+                st.session_state.leidos[idx] = not st.session_state.leidos[idx]
 
-    # 2. Guardar en Supabase
-    supabase.table("progress").upsert({
-        "user_id": user.id,
-        "book_id": book_id,
-        "data": st.session_state.leidos
-    }).execute()
+                supabase.table("progress").upsert({
+                    "user_id": user.id,
+                    "book_id": book_id,
+                    "data": st.session_state.leidos
+                }).execute()
 
-    # 3. Recargar app
-    st.rerun()
+                st.rerun()
                 
                 if st.session_state.leidos[idx]:
                     columnas[j].markdown("🟩")
